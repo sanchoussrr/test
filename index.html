@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Для Марини — Тобі крильця, ніжний промінчик</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Витончені шрифти з відчуттям тепла та свіжості -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <!-- Ікони Font Awesome для ніжних акцентів -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fef9f5;  /* найніжніший персиковий фон */
+            font-family: 'Inter', sans-serif;
+            color: #2d2a2a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* плавні градієнти та м'які тіні */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* секції з повітряним простором */
+        section {
+            margin-bottom: 5rem;
+        }
+
+        /* заголовки з витонченим акцентом */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 3.4rem;
+            background: linear-gradient(135deg, #c37d7d, #e4a788);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #b25d5d;
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #f3cfb3;
+            border-radius: 4px;
+        }
+
+        /* Hero — центральне вітання */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 0 1rem;
+        }
+        .hero-icon {
+            font-size: 4.8rem;
+            color: #f1c7a5;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.03));
+            animation: gentleFloat 4s ease-in-out infinite;
+        }
+        @keyframes gentleFloat {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            color: #6c4e3e;
+            margin: 1rem 0 1.8rem;
+            font-weight: 400;
+            background: rgba(255, 245, 235, 0.7);
+            backdrop-filter: blur(2px);
+            padding: 0.8rem 1.6rem;
+            border-radius: 60px;
+        }
+        .btn-warm {
+            background: #f3dfcd;
+            border: none;
+            padding: 0.9rem 2rem;
+            border-radius: 48px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #a35151;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-warm i {
+            font-size: 1.1rem;
+        }
+        .btn-warm:hover {
+            background: #f5cdb0;
+            color: #894242;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 18px rgba(160, 100, 60, 0.1);
+        }
+
+        /* картки побажань — ніжна сітка */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        .card {
+            background: #ffffffdd;
+            backdrop-filter: blur(3px);
+            background: linear-gradient(145deg, #ffffff, #fffaf5);
+            border-radius: 36px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #fff4ea;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 35px -12px rgba(115, 70, 45, 0.12);
+            background: white;
+        }
+        .card-icon {
+            font-size: 2.2rem;
+            color: #d99474;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            color: #b2655c;
+            margin-bottom: 0.7rem;
+        }
+        .card p {
+            color: #5e4b3b;
+            font-size: 0.95rem;
+        }
+
+        /* календар настрою & зона для порад */
+        .mood-section {
+            background: #fff9f3;
+            border-radius: 48px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #ffe5d4;
+        }
+        .mood-selector {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.8rem 0 1rem;
+        }
+        .mood-btn {
+            background: #fef2e9;
+            border: none;
+            border-radius: 60px;
+            padding: 0.7rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #986b54;
+            transition: all 0.2s;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+        .mood-btn i {
+            font-size: 1.2rem;
+        }
+        .mood-btn.active, .mood-btn:hover {
+            background: #f3cfb3;
+            color: #784e3c;
+            transform: scale(0.96);
+        }
+        .advice-box {
+            background: #fff2e8;
+            border-radius: 2rem;
+            padding: 1.6rem;
+            margin-top: 1.8rem;
+            font-size: 1.05rem;
+            text-align: center;
+            border-left: 6px solid #f1ba9a;
+            transition: all 0.2s;
+        }
+        .advice-text {
+            font-weight: 500;
+            color: #523b2e;
+        }
+        .advice-sub {
+            font-size: 0.85rem;
+            margin-top: 0.6rem;
+            color: #ab7f68;
+        }
+
+        /* Секція квітів та музики (дрібнички тепла) */
+        .comfort-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+        .comfort-card {
+            flex: 1;
+            min-width: 200px;
+            background: #fffcf7;
+            border-radius: 38px;
+            padding: 1.4rem;
+            text-align: center;
+            box-shadow: 0 8px 18px rgba(140, 80, 50, 0.05);
+            transition: 0.2s;
+        }
+        .comfort-card i {
+            font-size: 2.2rem;
+            color: #e4aa84;
+            margin-bottom: 0.6rem;
+        }
+        .flower-quote {
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            margin: 0.8rem 0;
+        }
+
+        /* підвал з іменем та промінчиком */
+        .footer-note {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem 0 1rem;
+            border-top: 1px solid #ffeadb;
+            font-size: 0.9rem;
+            color: #b38b72;
+        }
+        .heartbeat {
+            display: inline-block;
+            animation: heartbeat 1.3s ease infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.12); }
+        }
+
+        /* адаптив */
+        @media (max-width: 700px) {
+            h1 { font-size: 2.4rem; }
+            .container { padding: 1.5rem; }
+            .cards-grid { gap: 1rem; }
+            .hero p { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Головна секція — тепле привітання -->
+    <section class="hero">
+        <div class="hero-icon">
+            <i class="fas fa-feather-alt"></i>
+        </div>
+        <h1>Для нашої Марини</h1>
+        <p>✨ Ти — світло, яке зігріває навіть у похмурі дні. Нехай цей маленький куточок додасть тобі тепла, турботи і віри в диво одужання. ✨</p>
+        <button class="btn-warm" id="sendWarmBtn"><i class="fas fa-heart"></i> Надіслати тобі промінчик</button>
+    </section>
+
+    <!-- Картки побажань - ніжна підтримка -->
+    <section>
+        <h2>Тобі щиро бажають...</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-sun"></i></div>
+                <h3>Тепла</h3>
+                <p>Нехай кожен день зігріває внутрішнє сонечко, а одужання йде легкими хвилями.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-hand-sparkles"></i></div>
+                <h3>Легкості</h3>
+                <p>Твоя сила більша, ніж ти уявляєш. Відпочивай, набирайся сил — все обов'язково мине.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-cloud-moon"></i></div>
+                <h3>Спокійних снів</h3>
+                <p>Сон — найкращі ліки. Нехай твої сни будуть ніжними, а ранки — бадьорими.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-seedling"></i></div>
+                <h3>Відновлення</h3>
+                <p>Кожна клітина твого тіла оновлюється з любов'ю. Ти сильна, Марино.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Інтерактивний блок "Як почуваєшся?" + підтримка -->
+    <section>
+        <h2>Твій настрій — важливий</h2>
+        <div class="mood-section">
+            <div style="text-align: center; margin-bottom: 0.5rem;"><i class="fas fa-face-smile" style="color: #d99574;"></i> Обери, що відчуваєш зараз, і я підкажу ніжну пораду</div>
+            <div class="mood-selector" id="moodSelector">
+                <button data-mood="tired" class="mood-btn"><i class="fas fa-battery-quarter"></i> Втома</button>
+                <button data-mood="sad" class="mood-btn"><i class="fas fa-cloud-rain"></i> Сумно</button>
+                <button data-mood="anxious" class="mood-btn"><i class="fas fa-waveform"></i> Тривога</button>
+                <button data-mood="hopeful" class="mood-btn"><i class="fas fa-star-of-life"></i> Надія</button>
+            </div>
+            <div id="adviceContainer" class="advice-box">
+                <div class="advice-text">🌼 Торкнись будь-якого почуття — знайдуться слова підтримки 🌼</div>
+                <div class="advice-sub">Ти не сама, Марино. Ми поряд.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- маленькі приємності - музика, квіти та затишок -->
+    <section>
+        <h2>Дрібнички, що зігрівають</h2>
+        <div class="comfort-row">
+            <div class="comfort-card">
+                <i class="fas fa-music"></i>
+                <h3 style="font-size: 1.2rem;">Мелодія спокою</h3>
+                <div class="flower-quote">🎵 Уяви ніжну фортепіанну музику, що огортає тебе, наче плед. 🎵</div>
+                <button id="playCalmSoundBtn" class="btn-warm" style="background:#f2e1d2; padding:0.5rem 1.2rem; font-size:0.8rem;"><i class="fas fa-headphones"></i> Тихо грати</button>
+                <audio id="calmAudio" loop preload="auto">
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Ваш браузер не підтримує аудіо, але уявіть ніжну фортепіанну п'єсу.
+                </audio>
+            </div>
+            <div class="comfort-card">
+                <i class="fas fa-leaf"></i>
+                <h3 style="font-size: 1.2rem;">Квітковий настрій</h3>
+                <div class="flower-quote">🌸 «Навіть у найтихішому саду ростуть найсміливіші квіти» 🌸</div>
+                <button id="flowerQuoteBtn" class="btn-warm" style="background:#f2e1d2; padding:0.5rem 1.2rem;"><i class="fas fa-seedling"></i> Ще цитату</button>
+                <p id="dynamicFlowerQuote" style="margin-top: 0.6rem; font-size: 0.85rem; font-style: italic; color:#a56c50;">"Ти розквітаєш кожного дня"</p>
+            </div>
+            <div class="comfort-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3 style="font-size: 1.2rem;">Нагадування</h3>
+                <div class="flower-quote">💧 Зроби маленький ковток води, глибоко вдихни. Ти тут, ти важлива. 💧</div>
+                <button id="gentleReminderBtn" class="btn-warm" style="background:#f2e1d2; padding:0.5rem 1.2rem;"><i class="fas fa-bell"></i> Ніжне нагадування</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- скромний лічильник промінчиків -->
+    <div style="text-align: center; margin: 1rem 0 0;">
+        <span style="background:#fff2ea; border-radius: 100px; padding: 0.3rem 1rem; font-size: 0.8rem;"><i class="far fa-star"></i> <span id="warmCount">0</span> промінчиків підтримки надіслано тобі</span>
+    </div>
+    <div class="footer-note">
+        <i class="fas fa-heart heartbeat" style="color:#e2a17a;"></i> для Марини з любов'ю 
+        <i class="fas fa-feather-alt" style="margin:0 4px;"></i> одужуй ніжно, день за днем. Ти — неймовірна.
+    </div>
+</div>
+
+<script>
+    (function() {
+        // ---------- Лічильник теплих промінчиків ----------
+        let warmCount = localStorage.getItem('marinaWarmCount') ? parseInt(localStorage.getItem('marinaWarmCount')) : 0;
+        const warmCountSpan = document.getElementById('warmCount');
+        const sendWarmBtn = document.getElementById('sendWarmBtn');
+        
+        function updateWarmCounter() {
+            warmCountSpan.textContent = warmCount;
+            localStorage.setItem('marinaWarmCount', warmCount);
+        }
+        updateWarmCounter();
+
+        sendWarmBtn.addEventListener('click', () => {
+            warmCount++;
+            updateWarmCounter();
+            // показуємо легке сповіщення як тихе "дякую"
+            const originalText = sendWarmBtn.innerHTML;
+            sendWarmBtn.innerHTML = '<i class="fas fa-check"></i> Промінчик долетів!';
+            setTimeout(() => {
+                sendWarmBtn.innerHTML = originalText;
+            }, 1800);
+            // ефект легкої вібрації якщо підтримується (без нав'язливості)
+            if (navigator.vibrate) navigator.vibrate(50);
+            // можна додати маленький сплеск анімації
+        });
+
+        // ---------- Інтерактивний настрій + поради (база для Марини) ----------
+        const moodButtons = document.querySelectorAll('.mood-btn');
+        const adviceContainer = document.getElementById('adviceContainer');
+        
+        const moodAdviceMap = {
+            tired: {
+                text: "🕯️ Твоя втома — це не слабкість, а сигнал про відпочинок. Дозволь собі зараз просто «бути» без справ. Ти заслуговуєш на відпочинок, Марино. Подихай глибоко, уяви тепле макове поле.",
+                sub: "💤 Навіть 10 хвилин тиші зараз — це цілющий бальзам."
+            },
+            sad: {
+                text: "☁️ Смуток теж має право бути. Це означає, що твоє серце чуйне та живе. Твоя хоробрість у тому, що ти дозволяєш собі відчувати. Нехай сльози очистять простір для нової радості, Марино.",
+                sub: "✨ Ти не одна, поряд є люблячі серця. Обіймаю тебе подумки."
+            },
+            anxious: {
+                text: "🌊 Тривога — як хвиля, вона приходить і йде. Зараз зроби вдих на 4, затримай на 2, видих на 6. Ти в безпеці. Твоє тіло зцілюється, і все буде добре.",
+                sub: "🍃 Згадай щось ніжно-зелене, ліс після дощу. Ти — дуже сильна."
+            },
+            hopeful: {
+                text: "🌟 Ось воно — світло надії! Ти вже на правильному шляху. Віра в одужання творить справжні дива. Кожен новий день наближає тебе до повного здоров'я.",
+                sub: "🌻 Пам'ятай: все минає, і ця хвороба теж. А твоя посмішка неодмінно повернеться ще яскравішою."
+            }
+        };
+        
+        function setAdvice(moodKey) {
+            const advice = moodAdviceMap[moodKey];
+            if(advice) {
+                adviceContainer.innerHTML = `<div class="advice-text">${advice.text}</div><div class="advice-sub">${advice.sub}</div>`;
+            } else {
+                adviceContainer.innerHTML = `<div class="advice-text">🌸 Ти робиш кроки до одужання — це варте поваги. Дозволь собі бути ніжною до себе.</div><div class="advice-sub">Ти — дивовижна, Марино.</div>`;
+            }
+            // активний стиль кнопки
+            moodButtons.forEach(btn => btn.classList.remove('active'));
+            const activeBtn = document.querySelector(`.mood-btn[data-mood="${moodKey}"]`);
+            if(activeBtn) activeBtn.classList.add('active');
+        }
+        
+        moodButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const mood = btn.getAttribute('data-mood');
+                setAdvice(mood);
+                // зберегти останній настрій до localStorage
+                localStorage.setItem('marinaLastMood', mood);
+            });
+        });
+        
+        // відновлюємо останній вибраний настрій (якщо є)
+        const savedMood = localStorage.getItem('marinaLastMood');
+        if(savedMood && moodAdviceMap[savedMood]) {
+            setAdvice(savedMood);
+        } else {
+            // трохи випадкове але добре за замовчуванням: надія
+            setAdvice('hopeful');
+        }
+        
+        // ---------- Звукова кнопка "Тихо грати" з перемиканням ----------
+        const audioEl = document.getElementById('calmAudio');
+        const playBtn = document.getElementById('playCalmSoundBtn');
+        let isPlaying = false;
+        // звук за замовчуванням з SoundHelix (ліцензійно чисто, дуже ніжна гітарна/фортепіанна)
+        // Спроба автоплей блокується браузером, але юзер клікне — звук запуститься.
+        playBtn.addEventListener('click', () => {
+            if(!audioEl.paused && !audioEl.ended && isPlaying) {
+                audioEl.pause();
+                playBtn.innerHTML = '<i class="fas fa-headphones"></i> Тихо грати';
+                isPlaying = false;
+            } else {
+                audioEl.play().then(() => {
+                    isPlaying = true;
+                    playBtn.innerHTML = '<i class="fas fa-pause-circle"></i> Замовкнути мелодію';
+                }).catch(err => {
+                    console.warn("Аудіо не вдалося відтворити автоматично через політики браузера, але клік спрацює.");
+                    // все одно змінюємо текст, але звук не завжди з першого разу, якщо помилка? Спробуємо ще раз?
+                    if (err) {
+                        alert("Натисніть ще раз, будь ласка. Звук потребує дозволу від браузера 💛");
+                    }
+                });
+            }
+        });
+        
+        audioEl.addEventListener('ended', () => {
+            isPlaying = false;
+            playBtn.innerHTML = '<i class="fas fa-headphones"></i> Тихо грати';
+        });
+        
+        // ---------- Квіткові цитати (динамічні) ----------
+        const flowerQuotes = [
+            "🌷 «Квіти розквітають після дощу — так само, як і ти.»",
+            "🌼 «Твоє серце — маленький сад, доглядай його ніжністю.»",
+            "🌻 «Сила соняшника — завжди шукати світло, навіть у хмарний день.»",
+            "🌸 «Ти гарнішаєш з кожною хвилиною відпочинку, бо дозволяєш собі зцілюватись.»",
+            "🌺 «Терпіння і турбота — твої крила. Вони виростуть сильними.»"
+        ];
+        const flowerQuoteBtn = document.getElementById('flowerQuoteBtn');
+        const dynamicQuoteSpan = document.getElementById('dynamicFlowerQuote');
+        let quoteIndex = 0;
+        flowerQuoteBtn.addEventListener('click', () => {
+            dynamicQuoteSpan.textContent = flowerQuotes[quoteIndex % flowerQuotes.length];
+            quoteIndex++;
+            // невеликий ефект
+            dynamicQuoteSpan.style.opacity = '0';
+            setTimeout(() => dynamicQuoteSpan.style.opacity = '1', 80);
+        });
+        
+        // ---------- ніжне нагадування через сповіщення (не нав'язливе) ----------
+        const reminderBtn = document.getElementById('gentleReminderBtn');
+        reminderBtn.addEventListener('click', () => {
+            // створимо маленьке повідомлення як тост
+            const toastDiv = document.createElement('div');
+            toastDiv.textContent = '💆‍♀️ Пам’ятай: ти робиш достатньо. Просто дихай, пий воду, будь ніжною до себе. Все мине. 💆‍♀️';
+            toastDiv.style.position = 'fixed';
+            toastDiv.style.bottom = '20px';
+            toastDiv.style.left = '50%';
+            toastDiv.style.transform = 'translateX(-50%)';
+            toastDiv.style.backgroundColor = '#fff2e6';
+            toastDiv.style.color = '#6f4e3a';
+            toastDiv.style.padding = '12px 24px';
+            toastDiv.style.borderRadius = '50px';
+            toastDiv.style.fontSize = '0.9rem';
+            toastDiv.style.fontWeight = '500';
+            toastDiv.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+            toastDiv.style.zIndex = '1000';
+            toastDiv.style.backdropFilter = 'blur(6px)';
+            toastDiv.style.border = '1px solid #fadbc8';
+            toastDiv.style.fontFamily = "'Inter', sans-serif";
+            document.body.appendChild(toastDiv);
+            setTimeout(() => {
+                toastDiv.style.opacity = '0';
+                setTimeout(() => toastDiv.remove(), 500);
+            }, 3500);
+            // вібрація дуже легка
+            if (navigator.vibrate) navigator.vibrate(30);
+        });
+        
+        // додатковий ефект: при завантаженні сайту показуємо вітальну теплу нотку
+        const welcomeMsg = document.createElement('div');
+        welcomeMsg.textContent = '🌿 Вітаю, Марино! Цей сайт — твій маленький затишний простір. Одужуй з легкістю 🌿';
+        welcomeMsg.style.position = 'fixed';
+        welcomeMsg.style.top = '20px';
+        welcomeMsg.style.left = '50%';
+        welcomeMsg.style.transform = 'translateX(-50%)';
+        welcomeMsg.style.backgroundColor = '#faf0e6';
+        welcomeMsg.style.padding = '8px 20px';
+        welcomeMsg.style.borderRadius = '40px';
+        welcomeMsg.style.fontSize = '0.85rem';
+        welcomeMsg.style.boxShadow = '0 5px 12px rgba(0,0,0,0.05)';
+        welcomeMsg.style.zIndex = '999';
+        welcomeMsg.style.fontWeight = '400';
+        welcomeMsg.style.color = '#a66e54';
+        welcomeMsg.style.backdropFilter = 'blur(8px)';
+        welcomeMsg.style.border = '1px solid #ffe3d4';
+        document.body.appendChild(welcomeMsg);
+        setTimeout(() => {
+            welcomeMsg.style.opacity = '0';
+            setTimeout(() => welcomeMsg.remove(), 800);
+        }, 4500);
+        
+        // робимо кнопку промінчика ще трохи привітнішою: анімація серця
+        const warmHeart = document.querySelector('#sendWarmBtn i');
+        if(warmHeart) {
+            sendWarmBtn.addEventListener('click', () => {
+                warmHeart.style.transform = 'scale(1.3)';
+                setTimeout(() => warmHeart.style.transform = 'scale(1)', 200);
+            });
+        }
+    })();
+</script>
+</body>
+</html>
